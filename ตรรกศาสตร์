@@ -1,0 +1,61 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+    srand(static_cast<unsigned>(time(0)));
+
+    int P = rand() % 4;
+    int Q = rand() % 4;
+    int R = rand() % 4;
+    int S = rand() % 4;
+    int V = rand() % 8;  // Reduced range to match zys array size
+    int g = rand() % 8;
+    int o = rand() % 8;
+
+    std::string truthValues[4] = {"T", "F", "T", "F"};
+    std::string logicalOperators[8] = {" ^ ", " v ", " -> ", " <-> ", " ^ ", " v ", " -> ", " <-> "};
+    std::string negation[4] = {"", "~", "", "~"};
+
+    int oe = rand() % 4;
+    int wqt[4] = {0, 2, 0, 2};
+    int er = wqt[oe];
+
+    std::string variables[8] = {"P", "Q", "R", "S", "P", "Q", "R", "S"};
+
+    int ran = rand() % 8;
+    int run = rand() % 8;
+    int spe = rand() % 8;
+    int pse = rand() % 8;
+
+    std::string abc = variables[ran];
+    std::string efg = variables[run];
+    std::string hij = variables[spe];
+    std::string jjk = variables[pse];
+
+    std::string x = negation[P] + "P|" + truthValues[P] + "| " +
+                    negation[Q] + "Q|" + truthValues[Q] + "| " +
+                    negation[R] + "R|" + truthValues[R] + "| " +
+                    negation[S] + "S|" + truthValues[S] + "| ";
+
+    if (er == 2) {
+        std::string expressions[6] = {
+            "(" + negation[P] + abc + logicalOperators[V] + negation[Q] + efg + ")" + logicalOperators[g] + "(" + negation[R] + hij + logicalOperators[o] + negation[S] + jjk + ")",
+            "(" + negation[P] + abc + logicalOperators[V] + negation[Q] + efg + ")" + logicalOperators[g] + negation[R] + hij + logicalOperators[o] + negation[S] + jjk,
+            negation[P] + abc + "(" + logicalOperators[V] + negation[Q] + efg + ")" + logicalOperators[g] + negation[R] + hij + logicalOperators[o] + negation[S] + jjk,
+            "(" + negation[P] + abc + logicalOperators[V] + negation[Q] + efg + ")" + logicalOperators[g] + "(" + negation[R] + hij + logicalOperators[o] + negation[S] + jjk + ")",
+            "(" + negation[P] + abc + logicalOperators[V] + negation[Q] + efg + ")" + logicalOperators[g] + negation[R] + hij + logicalOperators[o] + negation[S] + jjk,
+            negation[P] + abc + "(" + logicalOperators[V] + negation[Q] + efg + ")" + logicalOperators[g] + negation[R] + hij + logicalOperators[o] + negation[S] + jjk
+        };
+
+        int dfg = rand() % 6;
+        std::string fdg = expressions[dfg];
+
+        std::cout << "Direction: Solve this equation" << "\n\n" << x << " ; " << fdg << " = ";
+    } else {
+        std::string b = negation[P] + abc + logicalOperators[V] + negation[Q] + efg + logicalOperators[g] + negation[R] + hij + logicalOperators[o] + negation[S] + jjk;
+        std::cout << "Direction: Solve this equation" << "\n\n" << x << " ; " << b << " = ";
+    }
+
+    return 0;
+}
